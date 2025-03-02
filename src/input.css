@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Dark Mode */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+#toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-3;
+}
+
+@theme {
+  --color-primary: #15803d;
+  --color-secondary: #f43f5e;
+  --color-dark: #334155;
+  --color-aksen: #f43f5e;
+}
+
+@layer components {
+  .container {
+    margin: 0 auto;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
+
+/* Fixed Navbar */
+.fixed-navbar {
+  @apply fixed bg-white shadow-md dark:bg-slate-800;
+}
+
+/* Hamburger menu */
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
