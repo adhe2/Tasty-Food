@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nikmati aneka makanan terbaik di Tasty Food! Kami menyajikan hidangan lezat dengan bahan berkualitas tinggi dan layanan terbaik. Pesan sekarang!" />
+
+    <title>Tasty Food - Restoran Terbaik dengan Aneka Makanan Lezat</title>
+    <link rel="icon" type="image/jpg" href="img/tasty-food-hero.png" />
+    <link href="/src/output.css" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Tasty Food",
+        "image": "https://example.com/img/hero-food-transparent-bg.png",
+        "description": "Kami menyajikan makanan terbaik dengan bahan berkualitas dan rasa lezat.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Makanan Enak No. 10",
+          "addressLocality": "Jakarta",
+          "addressRegion": "DKI Jakarta",
+          "postalCode": "12345",
+          "addressCountry": "ID"
+        },
+        "telephone": "+62 812-3456-7890",
+        "servesCuisine": ["Indonesian", "Western", "Asian"],
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 10:00-22:00",
+        "menu": "https://example.com/menu",
+        "acceptsReservations": "True"
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <header id="Navbar" class="absolute bg-transparent top-0 left-0 w-full flex items-center z-999 dark:bg-slate-800">
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-8 py-6">
+            <a href="#" class="text-xl text-primary font-bold">Tasty</a>
+          </div>
+
+          <div class="flex items-center">
+            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+              <span class="hamburger-line transition-all duration-300 origin-top-left"></span>
+              <span class="hamburger-line transition-all duration-300"></span>
+              <span class="hamburger-line transition-all duration-300 origin-bottom-left"></span>
+            </button>
+            <!-- dark & light mode -->
+
+            <!-- <div class="absolute right-15">
+              <input id="toggle" type="checkbox" class="hidden" />
+              <label for="toggle">
+                <div class="w-9 h-5 bg-slate-300 rounded-full flex items-center p-1 cursor-pointer">
+                  <div class="w-4 h-4 bg-white rounded-full toggle-circle">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="dark:hidden">
+                      <path
+                        d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
+                      ></path>
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hidden dark:block dark:text-white">
+                      <path
+                        d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div> -->
+
+            <nav id="nav-menu" class="hidden dark:bg-slate-800 lg:block lg:static lg:rounded-none lg:shadow-none absolute bg-white rounded-lg shadow-lg w-[70%] h-auto top-20 right-12 sm:right-25 z-50">
+              <ul class="block lg:flex lg:items-center px-2">
+                <li class="group p-4 border-b border-slate-200 lg:border-none">
+                  <a href="#home" class="text-lg text-dark font-medium dark:text-white">Home</a>
+                </li>
+                <li class="group p-4 border-b border-slate-200 lg:border-none">
+                  <a href="#about" class="text-lg text-dark font-medium dark:text-white">About</a>
+                </li>
+                <li class="group p-4 border-b border-slate-200 lg:border-none">
+                  <a href="#service" class="text-lg text-dark font-medium dark:text-white">Services</a>
+                </li>
+                <li class="group p-4 border-b border-slate-200 lg:border-none">
+                  <a href="#menu" class="text-lg text-dark font-medium dark:text-white">Menu</a>
+                </li>
+                <li class="group p-4 border-b border-slate-200 lg:border-none">
+                  <a href="#contact" class="text-lg text-dark font-medium dark:text-white">Contact</a>
+                </li>
+                <li class="group p-4"></li>
+              </ul>
+            </nav>
+            <button id="dark-mode" class="w-6 h-6 flex transition-transform absolute right-15 lg:right-0 overflow-hidden z-50">
+              <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="dark:hidden">
+                <path
+                  d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
+                ></path>
+              </svg>
+              <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hidden dark:block dark:text-white">
+                <path
+                  d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="py-24 dark:bg-slate-800">
+      <div class="container">
+        <div class="flex flex-wrap justify-evenly sm:gap-5">
+          <div class="px-4 pt-12 pb-8 self-center">
+            <div class="pb-8 judul">
+              <h1 class="text-5xl sm:text-6xl lg:text-8xl text-primary font-bold">Tasty Food</h1>
+            </div>
+            <div class="pb-10 md:pb-16 text-base/8 sub-judul1">
+              <h3 class="text-3xl dark:text-white sm:text-4xl lg:text-5xl max-w-[20rem] sm:max-w-[24rem] lg:max-w-[32rem] font-semibold text-dark">Try the best food of the week.</h3>
+            </div>
+            <div class="pb-4 tombol-judul">
+              <a href="#menu" class="text-sm sm:text-lg text-white font-semibold px-4 py-3 bg-aksen rounded-lg hover:shadow-lg hover:bg-rose-600 transition duration-300 dark:shadow-white dark:hover:shadow-md">View Menu</a>
+            </div>
+          </div>
+          <div class="px-2 max-w-xs sm:max-w-xs md:max-w-xs lg:max-w-sm xl:max-w-md gambar-judul">
+            <img width="1500" src="/img/tasty-food-hero.png" alt="Makanan lezat tasty food" loading="lazy" class="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Start -->
+    <article id="about" class="pt-36 pb-24 dark:bg-slate-800">
+      <div class="container">
+        <div class="flex flex-wrap justify-evenly">
+          <div class="px-4 max-w-md md:max-w-2xs lg:max-w-md self-center gambar-about">
+            <img src="/img/food-about.jpg" alt="Tentang" loading="lazy" class="rounded-lg shadow-xl" />
+          </div>
+          <div class="px-8 pt-8 md:pt-0 isi-about max-w-lg md:max-w-md lg:max-w-lg">
+            <h2 class="text-lg text-primary font-semibold py-4 judul-about">About Us</h2>
+            <h1 class="text-2xl sub-about1 dark:text-white max-w-3xs sm:text-3xl md:text-4xl lg:text-5xl md:max-w-xs lg:max-w-md text-dark font-bold pb-8">We cook the best tasty food</h1>
+            <p class="text-base p-about dark:text-white text-slate-600 pb-8 max-w-sm">We cook the best food in the entire city, with excellent customer service, the best meals and at the best price, visit us.</p>
+            <a href="#" class="p-3 tombol-about text-sm bg-aksen rounded-lg text-white font-semibold hover:shadow-lg hover:bg-rose-600 dark:hover:shadow-white dark:hover:shadow-md transition duration-300">Explore History</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- About End -->
+
+    <!-- Services Start -->
+
+    <article id="service" class="pt-36 dark:bg-slate-800">
+      <div class="container">
+        <div class="px-4">
+          <div class="judul-service flex justify-center pb-4">
+            <h1 class="text-lg text-primary font-semibold mx-auto">Offering</h1>
+          </div>
+          <div class="sub-service flex justify-center">
+            <h2 class="text-2xl text-dark font-bold dark:text-white">Our amazing services</h2>
+          </div>
+        </div>
+        <div class="px-4 flex flex-wrap justify-evenly py-16 gap-5">
+          <div class="max-w-2xs pb-4 service-1">
+            <div class="flex justify-center">
+              <img width="100" src="/img/icon/icon-piring.png" alt="piring" class="pb-4" />
+            </div>
+            <div class="">
+              <h2 class="text-xl text-center pb-4 text-dark font-bold dark:text-white">Excellent Food</h2>
+            </div>
+            <div class="max-w-3xs">
+              <p class="text-center dark:text-slate-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat tempore reprehenderit beatae. Ratione, temporibus sapiente?</p>
+            </div>
+          </div>
+          <div class="max-w-2xs pb-4 service-2">
+            <div class="flex justify-center">
+              <img width="100" src="/img/icon/icon-pizza.png" alt="piring" class="pb-4" />
+            </div>
+            <div class="">
+              <h2 class="text-xl text-center pb-4 text-dark font-bold dark:text-white">Fast Food</h2>
+            </div>
+            <div class="max-w-3xs">
+              <p class="text-center dark:text-slate-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat tempore reprehenderit beatae. Ratione, temporibus sapiente?</p>
+            </div>
+          </div>
+          <div class="max-w-2xs pb-4 service-3">
+            <div class="flex justify-center">
+              <img width="100" src="/img/icon/icon-delivery-truck.png" alt="piring" class="pb-4" />
+            </div>
+            <div class="">
+              <h2 class="text-xl text-center pb-4 text-dark font-bold dark:text-white">Delivery</h2>
+            </div>
+            <div class="max-w-3xs">
+              <p class="text-center dark:text-slate-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat tempore reprehenderit beatae. Ratione, temporibus sapiente?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Services End -->
+
+    <!-- Menu Section Start -->
+
+    <section id="menu" class="pt-24 pb-8 dark:bg-slate-800">
+      <div class="container">
+        <div class="px-4">
+          <div class="flex justify-center pb-2 judul-menu">
+            <h1 class="text-lg text-primary font-semibold mx-auto">Special</h1>
+          </div>
+          <div class="flex justify-center pt-4 pb-10 sub-menu">
+            <h2 class="text-2xl text-dark font-bold dark:text-white">Menu of the week</h2>
+          </div>
+          <div class="flex flex-wrap justify-evenly gap-5">
+            <div class="px-12 py-8 card-1 shadow-lg dark:shadow-md dark:shadow-white rounded-xl relative">
+              <img width="150" src="/img/tasty-food-hero.png" alt="menu-1" />
+              <h2 class="text-xl text-dark font-bold py-4 dark:text-white">Vegetables Salad</h2>
+              <p class="text-base text-slate-600 dark:text-slate-300">Delicious Dish</p>
+              <h3 class="text-base text-dark font-bold py-3 dark:text-slate-300">IDR 100.000</h3>
+              <div class="absolute bg-aksen w-1/4 h-14 right-0 bottom-0 rounded-br-xl flex justify-center items-center">
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="px-12 py-8 card-2 shadow-lg dark:shadow-md dark:shadow-white rounded-xl relative">
+              <img width="150" src="/img/tasty-food-hero.png" alt="menu-1" />
+              <h2 class="text-xl text-dark font-bold py-4 dark:text-white">Vegetables Salad</h2>
+              <p class="text-base text-slate-600 dark:text-slate-300">Delicious Dish</p>
+              <h3 class="text-base text-dark font-bold py-3 dark:text-slate-300">IDR 100.000</h3>
+              <div class="absolute bg-aksen w-1/4 h-14 right-0 bottom-0 rounded-br-xl flex justify-center items-center">
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="px-12 py-8 card-3 shadow-lg dark:shadow-md dark:shadow-white rounded-xl relative">
+              <img width="150" src="/img/tasty-food-hero.png" alt="menu-1" />
+              <h2 class="text-xl text-dark font-bold py-4 dark:text-white">Vegetables Salad</h2>
+              <p class="text-base text-slate-600 dark:text-slate-300">Delicious Dish</p>
+              <h3 class="text-base text-dark font-bold py-3 dark:text-slate-300">IDR 100.000</h3>
+              <div class="absolute bg-aksen w-1/4 h-14 right-0 bottom-0 rounded-br-xl flex justify-center items-center">
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="px-12 py-8 card-4 shadow-lg dark:shadow-md dark:shadow-white rounded-xl relative">
+              <img width="150" src="/img/tasty-food-hero.png" alt="menu-1" />
+              <h2 class="text-xl text-dark font-bold py-4 dark:text-white">Vegetables Salad</h2>
+              <p class="text-base text-slate-600 dark:text-slate-300">Delicious Dish</p>
+              <h3 class="text-base text-dark font-bold py-3 dark:text-slate-300">IDR 100.000</h3>
+              <div class="absolute bg-aksen w-1/4 h-14 right-0 bottom-0 rounded-br-xl flex justify-center items-center">
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Section End -->
+
+    <!-- Contact Section Start -->
+
+    <section id="contact" class="pt-36 pb-24 dark:bg-slate-800">
+      <div class="container">
+        <div class="px-8 flex flex-wrap justify-evenly">
+          <div>
+            <h2 class="text-2xl judul-contact sm:text-4xl md:text-5xl text-dark font-bold pb-4 dark:text-white">Contact Us</h2>
+            <div class="max-w-md py-6 isi-contact">
+              <p class="text-base text-slate-600 dark:text-slate-300">If you want to reserve a table in our restaurant, contact us and we will attend you quickly, with our 24/7 chat service.</p>
+            </div>
+          </div>
+          <button class="py-8 md:pt-24 tombol-contact">
+            <a href="https://wa.link/dc1cb7" target="_blank" class="text-white bg-aksen p-3 rounded-lg hover:shadow-lg hover:bg-rose-600 dark:shadow-white dark:hover:shadow-md transition duration-300"> Contact us now</a>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="pt-18 bg-slate-200 dark:bg-slate-700">
+      <div class="container">
+        <div class="flex flex-wrap justify-evenly sm:justify-between pb-12">
+          <div class="px-4 pb-6">
+            <h2 class="text-xl text-primary font-bold">Tasty food</h2>
+            <p class="text-dark font-medium py-4 dark:text-white">Restaurant</p>
+            <div class="flex pt-4 gap-4 w-full">
+              <!-- Facebook -->
+              <a href="#" class="w-10">
+                <svg width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-dark dark:text-white">
+                  <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z"></path>
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="#" class="w-10">
+                <svg width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-dark dark:text-white">
+                  <path
+                    d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"
+                  ></path>
+                </svg>
+              </a>
+              <!-- X -->
+              <a href="#" class="w-10">
+                <svg width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-dark dark:text-white">
+                  <path d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Services Footer -->
+          <div class="px-2 sm:px-4 pb-4">
+            <h2 class="text-2xl text-dark font-bold dark:text-white">Services</h2>
+            <div class="py-3">
+              <a href="#" class="text-sm dark:text-slate-300">Deliveery</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">Piercing</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">Fast food</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">Reserve your spot</a>
+            </div>
+          </div>
+          <!-- Information Footer -->
+          <div class="px-2 sm:px-4 pb-4">
+            <h2 class="text-2xl text-dark font-bold dark:text-white">Information</h2>
+            <div class="py-3">
+              <a href="#" class="text-sm dark:text-slate-300">Event</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">Contact Us</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">Privacy Policy</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">Terms of services</a>
+            </div>
+          </div>
+          <!-- Adress Footer -->
+          <div class="px-2 sm:px-4 pb-4">
+            <h2 class="text-2xl text-dark font-bold dark:text-white">Adress</h2>
+            <div class="py-3">
+              <a href="#" class="text-sm dark:text-slate-300">Ternate Indonesia 9772</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">+62 822-9980-0794</a>
+            </div>
+            <div class="pb-3">
+              <a href="#" class="text-sm dark:text-slate-300">rangganetcenter@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="container">
+          <div class="px-4 flex justify-center py-8">
+            <p class="text-dark dark:text-white">©️ 2025 Rangga Net. All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="/src/script.js"></script>
+    <script src="/src/ScrollTrigger.min.js"></script>
+    <script src="/src/gsap.min.js"></script>
+    <script src="/src/animasi.js"></script>
+
+    <script></script>
+    <script></script>
+  </body>
+</html>
